@@ -1,0 +1,11 @@
+{
+    "IsEncrypted": false,
+    "Values": {
+      "AzureWebJobsStorage": "",
+      "FUNCTIONS_WORKER_RUNTIME": "python",
+      "COSMOS_DB_URL": "your-cosmos-uri-here",
+      "COSMOS_DB_KEY": "your-primary-key-here",
+      "COSMOS_DB_DATABASE": "VisitorCounter",
+      "COSMOS_DB_CONTAINER": "Counter"
+    }
+  }
