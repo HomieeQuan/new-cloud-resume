@@ -1,0 +1,5 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.highlight { background-color: lightblue; color: black; padding: 2px 4px; }
