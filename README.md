@@ -1,4 +1,5 @@
 # Cloud Resume Project
+https://cloud-resume-taquan.azureedge.net/
 
 A cloud-based digital resume built with modern web technologies and cloud services, following the Cloud Resume Challenge principles. This project demonstrates proficiency in full-stack development, cloud services, and DevOps practices.
 
