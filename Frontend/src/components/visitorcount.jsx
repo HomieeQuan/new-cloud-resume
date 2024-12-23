@@ -4,13 +4,12 @@ import { useState, useEffect } from "react";
 const Visitorcount = () => {
   const [count, setCount] = useState(0);
 
-  // Function to fetch visitor count
   const fetchAPI = async () => {
     try {
       const functionUrls = [
-        'https://quan-cloud-resume.azurewebsites.net/api/getvisitorcounter',
-        'https://quan-cloud-resume.azurewebsites.net/getvisitorcounter',
-        '/api/getvisitorcounter'
+        `https://quan-cloud-resume.azurewebsites.net/api/getvisitorcounter`,
+        `https://quan-cloud-resume.azurewebsites.net/api/test`,
+        `/api/getvisitorcounter`
       ];
   
       for (const url of functionUrls) {
@@ -30,9 +29,14 @@ const Visitorcount = () => {
           });
   
           if (response.ok) {
-            const data = await response.json();
-            console.log('Response data:', data);
-            setCount(data.count);
+            const text = await response.text();
+            console.log('Raw response text:', text);
+            const data = JSON.parse(text);
+            console.log('Parsed response data:', data);
+            
+            if (data.count !== undefined) {
+              setCount(data.count);
+            }
             return;
           }
         } catch (fetchError) {
