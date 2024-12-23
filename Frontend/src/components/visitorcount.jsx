@@ -9,7 +9,7 @@ const Visitorcount = () => {
       // Log the full environment variable
       console.log('Full env:', import.meta.env);
       
-      const functionUrl = `${import.meta.env.VITE_AZURE_FUNCTION_URL}api/getvisitorcounter`;
+      const functionUrl = `${import.meta.env.VITE_AZURE_FUNCTION_URL}/api/getvisitorcounter`;
       console.log('Computed function URL:', functionUrl);
       
       // Try a direct fetch to verify the URL
