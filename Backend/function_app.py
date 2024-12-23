@@ -7,7 +7,7 @@ from datetime import datetime, timezone
 
 app = func.FunctionApp(http_auth_level=func.AuthLevel.ANONYMOUS)
 
-@app.route(route="getvisitorcounter")
+@app.route(route="api/getvisitorcounter")
 def getvisitorcounter(req: func.HttpRequest) -> func.HttpResponse:
     logging.info('Processing visitor counter request.')
     
