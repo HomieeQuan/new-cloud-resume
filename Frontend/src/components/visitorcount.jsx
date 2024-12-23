@@ -7,20 +7,22 @@ const Visitorcount = () => {
   // Function to fetch visitor count
   const fetchAPI = async () => {
     try {
-      // Replace this URL with your Azure Function URL
-      const functionUrl = 'https://quan-cloud-resume.azurewebsites.net/api/api/getvisitorcounter?';
+      // Corrected URL - removed extra /api/ and unnecessary ?
+      const functionUrl = 'https://quan-cloud-resume.azurewebsites.net/api/getvisitorcounter';
       console.log('Making request to:', functionUrl);
       
       const response = await fetch(functionUrl, {
-        method: 'GET', // Changed to GET since that's how we set up our Azure Function
+        method: 'GET',
         headers: {
-          'Content-Type': 'application/json'
+          'Accept': 'application/json'
         }
       });
       
       console.log('Response status:', response.status);
       
       if (!response.ok) {
+        const errorText = await response.text();
+        console.error('Error response:', errorText);
         throw new Error(`HTTP error! status: ${response.status}`);
       }
       
