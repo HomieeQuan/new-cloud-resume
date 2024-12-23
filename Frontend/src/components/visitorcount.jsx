@@ -6,51 +6,25 @@ const Visitorcount = () => {
 
   const fetchAPI = async () => {
     try {
-      const functionUrls = [
-        `https://quan-cloud-resume.azurewebsites.net/api/getvisitorcounter`,
-        `https://quan-cloud-resume.azurewebsites.net/api/test`,
-        `/api/getvisitorcounter`
-      ];
-  
-      for (const url of functionUrls) {
-        try {
-          console.log(`Attempting to fetch from: ${url}`);
-          
-          const response = await fetch(url, {
-            method: 'GET',
-            headers: {
-              'Accept': 'application/json'
-            }
-          });
-          
-          console.log(`Response from ${url}:`, {
-            status: response.status,
-            headers: Object.fromEntries(response.headers.entries())
-          });
-  
-          if (response.ok) {
-            const text = await response.text();
-            console.log('Raw response text:', text);
-            const data = JSON.parse(text);
-            console.log('Parsed response data:', data);
-            
-            if (data.count !== undefined) {
-              setCount(data.count);
-            }
-            return;
-          }
-        } catch (fetchError) {
-          console.error(`Error fetching from ${url}:`, fetchError);
+      const functionUrl = `${import.meta.env.VITE_AZURE_FUNCTION_URL}?code=${import.meta.env.VITE_AZURE_FUNCTION_KEY}`;
+      const response = await fetch(functionUrl, {
+        method: 'GET',
+        headers: {
+          'Content-Type': 'application/json'
         }
+      });
+      
+      if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
       }
-  
-      throw new Error('Could not fetch visitor count from any URL');
+      
+      const data = await response.json();
+      setCount(data.count);
     } catch (error) {
-      console.error('Complete error details:', error);
+      console.error('Error fetching visitor count:', error);
     }
   };
 
-  // Fetch count when component mounts
   useEffect(() => {
     fetchAPI();
   }, []);
