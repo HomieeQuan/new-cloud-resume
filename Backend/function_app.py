@@ -10,7 +10,10 @@ app = func.FunctionApp(http_auth_level=func.AuthLevel.ANONYMOUS)
 @app.route(route="api/getvisitorcounter")
 def getvisitorcounter(req: func.HttpRequest) -> func.HttpResponse:
     logging.info('Processing visitor counter request.')
-    
+    logging.info('Visitor counter function triggered')
+    logging.info(f'Request method: {req.method}')
+    logging.info(f'Request headers: {req.headers}')
+    logging.info(f'Received route: {req.route_params}')
     try:
         # Initialize Cosmos DB client
         url = os.environ["COSMOS_DB_URL"]
