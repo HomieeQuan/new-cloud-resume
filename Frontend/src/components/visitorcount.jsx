@@ -4,27 +4,35 @@ import { useState, useEffect } from "react";
 const Visitorcount = () => {
   const [count, setCount] = useState(0);
 
+  // Function to fetch visitor count
   const fetchAPI = async () => {
     try {
-      // Use relative path to your API route
-      const response = await fetch('/api/getvisitorcounter', {
-        method: 'GET',
+      // Replace this URL with your Azure Function URL
+      const functionUrl = 'https://quan-cloud-resume.azurewebsites.net/api/api/getvisitorcounter?';
+      console.log('Making request to:', functionUrl);
+      
+      const response = await fetch(functionUrl, {
+        method: 'GET', // Changed to GET since that's how we set up our Azure Function
         headers: {
-          'Accept': 'application/json'
+          'Content-Type': 'application/json'
         }
       });
+      
+      console.log('Response status:', response.status);
       
       if (!response.ok) {
         throw new Error(`HTTP error! status: ${response.status}`);
       }
       
       const data = await response.json();
+      console.log('Response data:', data);
       setCount(data.count);
     } catch (error) {
       console.error('Error fetching visitor count:', error);
     }
   };
 
+  // Fetch count when component mounts
   useEffect(() => {
     fetchAPI();
   }, []);
