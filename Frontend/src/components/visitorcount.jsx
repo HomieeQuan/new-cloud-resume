@@ -7,30 +7,42 @@ const Visitorcount = () => {
   // Function to fetch visitor count
   const fetchAPI = async () => {
     try {
-      // Corrected URL - removed extra /api/ and unnecessary ?
-      const functionUrl = 'https://quan-cloud-resume.azurewebsites.net/api/getvisitorcounter';
-      console.log('Making request to:', functionUrl);
-      
-      const response = await fetch(functionUrl, {
-        method: 'GET',
-        headers: {
-          'Accept': 'application/json'
+      const functionUrls = [
+        'https://quan-cloud-resume.azurewebsites.net/api/getvisitorcounter',
+        'https://quan-cloud-resume.azurewebsites.net/getvisitorcounter',
+        '/api/getvisitorcounter'
+      ];
+  
+      for (const url of functionUrls) {
+        try {
+          console.log(`Attempting to fetch from: ${url}`);
+          
+          const response = await fetch(url, {
+            method: 'GET',
+            headers: {
+              'Accept': 'application/json'
+            }
+          });
+          
+          console.log(`Response from ${url}:`, {
+            status: response.status,
+            headers: Object.fromEntries(response.headers.entries())
+          });
+  
+          if (response.ok) {
+            const data = await response.json();
+            console.log('Response data:', data);
+            setCount(data.count);
+            return;
+          }
+        } catch (fetchError) {
+          console.error(`Error fetching from ${url}:`, fetchError);
         }
-      });
-      
-      console.log('Response status:', response.status);
-      
-      if (!response.ok) {
-        const errorText = await response.text();
-        console.error('Error response:', errorText);
-        throw new Error(`HTTP error! status: ${response.status}`);
       }
-      
-      const data = await response.json();
-      console.log('Response data:', data);
-      setCount(data.count);
+  
+      throw new Error('Could not fetch visitor count from any URL');
     } catch (error) {
-      console.error('Error fetching visitor count:', error);
+      console.error('Complete error details:', error);
     }
   };
 
