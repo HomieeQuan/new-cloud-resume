@@ -10,7 +10,7 @@ const Visitorcount = () => {
       console.log('Making request to:', functionUrl);
       
       const response = await fetch(functionUrl, {
-        method: 'GET',
+        method: 'GET',  // Ensure this matches your function's allowed methods
         headers: {
           'Content-Type': 'application/json'
         }
@@ -19,6 +19,8 @@ const Visitorcount = () => {
       console.log('Response status:', response.status);
       
       if (!response.ok) {
+        const errorText = await response.text();
+        console.error('Error response:', errorText);
         throw new Error(`HTTP error! status: ${response.status}`);
       }
       
@@ -29,7 +31,7 @@ const Visitorcount = () => {
       console.error('Error fetching visitor count:', error);
     }
   };
-  
+
   useEffect(() => {
     fetchAPI();
   }, []);
