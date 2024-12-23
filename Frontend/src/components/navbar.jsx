@@ -5,7 +5,7 @@ import Visitorcount from './visitorcount';
 
 const Navbar = () => {
     const navItems = [
-        'Home', 'Experience', 'Projects', 'Certifications', 'postreqquest'
+        'Home', 'Experience', 'Projects', 'Certifications', 
     ];
       
     const navItemRoutes = [

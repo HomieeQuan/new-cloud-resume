@@ -32,10 +32,10 @@ const HomePage = () => (
             </div>
           </div>
           <div className="flex gap-4">
-            <a href="#" className="p-3 text-cyan-300 bg-black bg-opacity-30 rounded-full hover:bg-opacity-50 transition-all duration-300">
+            <a href="https://linkedin.com/in/taquan-middleton" className="p-3 text-cyan-300 bg-black bg-opacity-30 rounded-full hover:bg-opacity-50 transition-all duration-300">
               <Linkedin size={24} />
             </a>
-            <a href="#" className="p-3 text-cyan-300 bg-black bg-opacity-30 rounded-full hover:bg-opacity-50 transition-all duration-300">
+            <a href="https://github.com/HomieeQuan" className="p-3 text-cyan-300 bg-black bg-opacity-30 rounded-full hover:bg-opacity-50 transition-all duration-300">
               <Github size={24} />
             </a>
           </div>
@@ -43,7 +43,7 @@ const HomePage = () => (
         <div className="flex flex-col gap-6 flex-grow text-center md:text-left">
           <div>
             <h1 className="text-4xl font-bold text-white">Taquan Middleton</h1>
-            <h2 className="text-xl text-cyan-300 mt-2">Software Engineer</h2>
+            <h2 className="text-xl text-cyan-300 mt-2">Cloud / Software Enginner</h2>
           </div>
           <div className="flex items-center text-cyan-200 justify-center md:justify-start">
             <MapPin size={20} className="mr-2" />

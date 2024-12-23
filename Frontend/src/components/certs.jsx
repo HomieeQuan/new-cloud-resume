@@ -30,12 +30,7 @@ const Certifications = () => {
       credentialId: "CKA-1234",
       issueDate: "In Progress"
     },
-    {
-    //   title: "Certified Information Systems Security Professional (CISSP)",
-    //   logo: "/path/to/cissp-logo.png",
-    //   credentialId: "CISSP-123456",
-    //   issueDate: "September 2023"
-    }
+    
   ];
 
   return (

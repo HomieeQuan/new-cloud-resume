@@ -13,7 +13,7 @@ const Projects = () => {
         "Documented project workflows and maintained version control using Git and GitHub, ensuring thorough documentation and collaborative development."
       ],
       tools: ["React", "Node.js", "Azure", "Python", "CosmosDB",],
-      link: "#"
+      link: "https://github.com/HomieeQuan/new-cloud-resume"
     },
     {
       title: "Serveless Movie API",
@@ -22,10 +22,10 @@ const Projects = () => {
         "Designed and implemented cloud infrastructure using Azure SDK, deploying a NoSQL database with Azure Cosmos DB, cloud storage with Azure Blob Storage, and serverless functions for efficient data retrieval.",
         "Prepared and managed data by sourcing and storing movie details in Azure Cosmos DB and hosting movie cover images in Azure Blob Storage to optimize data access and storage efficiency.",
         "Created multiple serverless functions, including GetMovies to fetch a list of all movies with cover URLs and GetMoviesByYear to retrieve movies based on a specified release year, enhancing the API's functionality.",
-        // "Achieved 25% reduction in overstock and stockout incidents"
+        
       ],
       tools: ["Python", "Azure Blob Storage", "Azure", "NoSQL", "CosmosDB"],
-      link: "#"
+      link: "https://github.com/HomieeQuan/ServerlessMovie-Api"
     },
     {
       title: "HoopMaster: Basketball Skill Enhancement Platform",
@@ -37,7 +37,7 @@ const Projects = () => {
         // "Conducted thorough security testing and smart contract audits"
       ],
       tools: ["Javascript", "Node.JS", "MongoDB", "RESTful API", "CSS"],
-      link: "#"
+      link: "https://github.com/HomieeQuan/DemoDay"
     },
     {
       title: "Contacts",
@@ -49,20 +49,9 @@ const Projects = () => {
         "Developed a user-friendly interface for seamless contact organization and interaction, enhancing user experience and engagement."
       ],
       tools: ["React", "Node.JS", "MongoDB", "Express", "RESTful API"],
-      link: "#"
+      link: "https://github.com/HomieeQuan/ContactsAppReact"
     },
-    {
-      title: "Automated Code Review System",
-      description: [
-        "Developed AI algorithms to detect code smells and potential bugs",
-        "Integrated with popular version control systems (Git, SVN)",
-        "Implemented customizable rule sets for different coding standards",
-        "Created detailed reports with suggestions for code improvement",
-        "Reduced manual code review time by 40% in large-scale projects"
-      ],
-      tools: ["Python", "NLP", "Git", "Jenkins", "REST API"],
-      link: "#"
-    }
+    
   ];
 
   return (

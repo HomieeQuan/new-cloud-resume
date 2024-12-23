@@ -4,24 +4,24 @@ import { Briefcase, MapPin, Clock, Building } from 'lucide-react';
 const Experience = () => {
   const jobs = [
     {
-      position: "Cloud Engineer",
-      company: "Freelance",
-      year: "2023 - Present",
-      location: "Trenton, NJ",
+      position: "Junior Cloud Systems Engineer",
+      company: "IKEA",
+      year: " March 2023 - Present",
+      location: "Conshohocken, PA",
       type: "Full-time",
       responsibilities: [
         "Built and managed scalable cloud infrastructure on Azure, leveraging services like Azure VMs, Blob Storage, and SQL Database, reducing costs by 30%.",
-        "Developed and deployed automated CI/CD pipelines with Docker and GitHub Actions, speeding up software release cycles by 50%.",
-        "Performed regular cloud security audits, identifying vulnerabilities and achieving a 98% compliance rate with security policies.",
-        "Optimized cloud resource allocation and storage management on Azure, cutting costs by 20% through automated scripts and tagging.",
-        "Supported migration of on-premises applications to Azure, ensuring minimal downtime and improving system scalability by 25%."
+        "Streamlined resource management by deploying solutions via Azure CLI and Azure Resource Graph, reducing manual tasks by 30%.",
+        "Collaborated with senior architects during 15+ agile sprints, contributing to architecture decisions for high-impact projects.",
+        "Built and deployed an AI-driven chatbot using Azure Functions, enabling users to select optimized resources and configure monitoring, saving clients 20-35% on average project costs.",
+        "Played a pivotal role in implementing Azure Security Center policies, enhancing infrastructure security for 50+ resources."
       ],
       skills: ["Azure Cloud Management", "Python", "Docker", "Cloud Security and Compliance", "CI/CD Automation"]
     },
     {
       position: "Full Stack Developer",
       company: "Resilient Coders",
-      year: "2022 - Present",
+      year: "Feb 2023 - June 2024",
       location: "Philadelphia, PA",
       type: "Full-time",
       responsibilities: [
@@ -36,7 +36,7 @@ const Experience = () => {
     {
       position: "Support Analyst",
       company: "IKEA",
-      year: "2022 - Present",
+      year: " Oct 2022 - Present",
       location: "Conshohocken, PA",
       type: "Full-time",
       responsibilities: [
