@@ -6,7 +6,7 @@ const Visitorcount = () => {
 
   const fetchAPI = async () => {
     try {
-      const functionUrl = import.meta.env.VITE_AZURE_FUNCTION_URL;
+      const functionUrl = `${import.meta.env.VITE_AZURE_FUNCTION_URL}/api/getvisitorcounter`;
       console.log('Making request to:', functionUrl);
       
       const response = await fetch(functionUrl, {
@@ -29,7 +29,7 @@ const Visitorcount = () => {
       console.error('Error fetching visitor count:', error);
     }
   };
-
+  
   useEffect(() => {
     fetchAPI();
   }, []);
