@@ -211,16 +211,4 @@ pytest --cov=api
 
 MIT License - See LICENSE file for details
 
-## Contact
 
-- GitHub: [Your GitHub]
-- LinkedIn: [Your LinkedIn]
-- Email: [Your Email]
-- Portfolio: [Your Portfolio]
-
-## Acknowledgments
-
-- Cloud Resume Challenge
-- Azure Documentation
-- React Documentation
-- Contributors
